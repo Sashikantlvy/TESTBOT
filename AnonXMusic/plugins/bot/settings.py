@@ -118,10 +118,10 @@ async def support(client, CallbackQuery, _):
         ),
     )
 
-@app.on_callback_query(filters.regex("^bot_info_data$"))
+@app.on_callback_query(filters.regex("bot_info_data"))
 async def show_bot_info(c: app, q: CallbackQuery):
     start = time()
-    x = await c.send_message(q.message.chat.id, "ᴘɪɴɢɪɴɢ ʙᴀʙʏ")
+    x = await c.send_message(q.message.chat.id, "ᴘɪɴɢɪɴɢ ʙᴀʙʏ....")
     delta_ping = time() - start
     await x.delete()
     txt = f"""
