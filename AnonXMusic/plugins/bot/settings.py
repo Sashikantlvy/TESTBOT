@@ -118,6 +118,20 @@ async def support(client, CallbackQuery, _):
         ),
     )
 
+@app.on_callback_query(filters.regex("^bot_info_data$"))
+async def show_bot_info(c: app, q: CallbackQuery):
+    start = time()
+    x = await c.send_message(q.message.chat.id, "ᴘɪɴɢɪɴɢ ʙᴀʙʏ")
+    delta_ping = time() - start
+    await x.delete()
+    txt = f"""
+    🏓 Pɪɴɢ: {delta_ping * 1000:.3f} ms   
+    🐍 Pʏᴛʜᴏɴ Vᴇʀsɪᴏɴ: 3.10.4
+    🔥 Pʏʀᴏɢʀᴀᴍ Vᴇʀsɪᴏɴ: {pver}
+    """
+    await q.answer(txt, show_alert=True)
+    return
+
 @app.on_callback_query(
     filters.regex("settings_helper") & ~BANNED_USERS
 )
