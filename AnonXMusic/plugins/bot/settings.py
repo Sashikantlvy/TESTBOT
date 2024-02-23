@@ -60,6 +60,47 @@ async def gib_repo(client, CallbackQuery, _):
         ),
     )
 
+@app.on_callback_query(filters.regex("lood") & ~BANNED_USERS)
+@languageCB
+async def support(client, CallbackQuery, _):
+    await CallbackQuery.edit_message_text(
+        text="ʜᴇʀᴇ ᴀʀᴇ ꜱᴏᴍᴇ ɪᴍᴘᴏʀᴛᴀɴᴛ ʟɪɴᴋꜱ.",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        text="ᴀɴᴏɴʏᴍᴏᴜs", url="https://t.me/ANONYMOUS_OD_13"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        text="ᴄʜᴀɴɴᴇʟ", url="https://t.me/STATUSDAIRY2"
+                    ),
+
+                    InlineKeyboardButton(
+                        text="ᴍᴜsɪᴄ ɢʀᴏᴜᴘ", url="https://t.me/+YUDTBz5C_1o0YzE1"
+                    ),
+                    
+                ],
+                [
+                    InlineKeyboardButton(
+                        text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/ABOUT_SASHIKANT"
+                    ),
+
+                    InlineKeyboardButton(
+                        text="ᴄʜᴀᴛᴛɪɴɢ", url="https://t.me/VOICEOFHEART0"
+                    ),
+                    
+                ],
+                [
+                    InlineKeyboardButton(
+                        text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper"
+                    )
+                ],
+            ]
+        ),
+    )
+
 @app.on_callback_query(
     filters.regex("settings_helper") & ~BANNED_USERS
 )
