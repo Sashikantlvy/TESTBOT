@@ -128,8 +128,6 @@ async def show_bot_info(c: app, q: CallbackQuery):
     🏓 Pɪɴɢ: {delta_ping * 1000:.3f} ms   
     🐍 Pʏᴛʜᴏɴ Vᴇʀsɪᴏɴ: 3.10.4
     🔥 Pʏʀᴏɢʀᴀᴍ Vᴇʀsɪᴏɴ: {pver}
-
-    ☆............𝙱𝚈 » <a href=\"https://t.me/ABOUT_SASHIKANT\">ᴀɴᴏɴʏᴍᴏᴜs💝</a>
     """
     await q.answer(txt, show_alert=True)
     return
