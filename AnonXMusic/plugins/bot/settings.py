@@ -56,7 +56,24 @@ async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
         InputMediaVideo("https://telegra.ph/file/4e53eb338228f563c984e.mp4", has_spoiler=True),
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper")]]
+            [
+                [
+                    InlineKeyboardButton(
+                        text="ᴄʜᴀᴛᴛɪɴɢ", url="https://t.me/VOICEOFHEART0"
+                    ),
+                    InlineKeyboardButton(
+                        text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/ABOUT_SASHIKANT"
+                    ),
+                ],
+                [
+                    InlineKeyboardButton(
+                        text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper"
+                    ),
+                    InlineKeyboardButton(
+                        text="ᴄʟᴏsᴇ", callback_data=f"close"
+                    ),
+                ]
+            ]
         ),
     )
 
