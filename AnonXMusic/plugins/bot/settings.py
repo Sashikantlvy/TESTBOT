@@ -118,6 +118,22 @@ async def support(client, CallbackQuery, _):
         ),
     )
 
+@app.on_callback_query(filters.regex("donate") & ~BANNED_USERS)
+@languageCB
+async def support(client, CallbackQuery, _):
+    await CallbackQuery.edit_message_text(
+        text="ᴋʜᴜᴅ ᴋᴇ ᴘᴀss 𝟷𝟶𝟶 ʀᴜᴘᴇᴇs ʜᴀɪ ᴋʏᴀ , ɴᴇʜɪ ʜᴀɪ ɴᴀ , ᴛᴏ ᴋʏᴜ ᴀʏᴀ ʜᴀɪ ʙʜᴀɪ, ɢᴀ*ᴅ ᴅᴇɴᴇ ᴋᴇʟɪʏᴇ ᴀʏᴀ ʜᴀɪ ᴋʏᴀ..... ",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        text="◁", callback_data=f"settingsback_helper"
+                    )
+                ],
+            ]
+        ),
+    )
+
 @app.on_callback_query(
     filters.regex("settings_helper") & ~BANNED_USERS
 )
